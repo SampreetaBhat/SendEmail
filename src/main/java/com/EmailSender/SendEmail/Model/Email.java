@@ -1,38 +1,37 @@
 package com.EmailSender.SendEmail.Model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
+import java.util.List;
 
 public class Email {
-    private String recipient;
+    private List<String> recipients;
     private String msgBody;
     private String subject;
-
-    public String getRecipient() {
-        return recipient;
+    
+    public void setRecipients(List<String> recipients) {
+        this.recipients = recipients;
     }
 
-    public void setRecipient(String recipient) {
-        this.recipient = recipient;
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+    public void setMsgBody(String msgBody) {
+        this.msgBody = msgBody;
+    }
+
+    public List<String> getRecipients() {
+        return recipients;
     }
 
     public String getMsgBody() {
         return msgBody;
     }
 
-    public void setMsgBody(String msgBody) {
-        this.msgBody = msgBody;
-    }
+
 
     public String getSubject() {
         return subject;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
 
 
 

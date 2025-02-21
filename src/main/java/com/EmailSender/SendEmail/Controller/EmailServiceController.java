@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/V1")
@@ -16,8 +18,8 @@ public class EmailServiceController {
     EmailService emailService;
 
     @PostMapping("/email")
-    public String sendEmail(@RequestBody Email email){
-        return emailService.sendEmail(email);
+    public String sendEmail(@RequestBody List<String> recipients){
+        return emailService.setRecipients(recipients);
     }
 
 
